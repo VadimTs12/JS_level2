@@ -7,7 +7,7 @@ class List {
         this.container = container;
         this.products = [];
         this.allProducts = [];
-        this.getProd()
+        // this.getProd()
     }
 
     async getJson() {
