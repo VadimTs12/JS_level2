@@ -63,6 +63,7 @@ class ProductsList extends List {
         super(url, container)
         this.cart = cart;
         this._init()
+        this.getProd()
     }
     _init() {
         document.querySelector(this.container).addEventListener('click', e => {
