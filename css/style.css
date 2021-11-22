@@ -66,7 +66,7 @@ button:hover {
 	color: #ffffff;
 }
 img {
-	max-width: 400px;
+	max-width: 200px;
 	width: 100%;
 }
 .summ {
@@ -164,7 +164,7 @@ img {
     bottom: 5px;
     right: 0;
 }
-.search-form{
+/* .search-form{
     position: relative;
     margin-right: 50px;
     display: inline-block;
@@ -180,4 +180,121 @@ img {
     background-color: transparent;
     border: none;
     border-bottom: 2px solid #fafafa;
+} */
+.search__form {
+        flex-basis: 100%;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
 }
+.search__form form {
+    position: relative;
+}
+.search__form .search {
+	 position: absolute;
+	 margin: auto;
+	 top: 0;
+	 left: 50px;
+	 bottom: 0;
+	 width: 40px;
+	 height: 40px;
+	 transition: all 1s;
+	 z-index: 4;
+}
+ .search__form .search:hover {
+	 cursor: pointer;
+}
+ .search__form .search::before {
+	 content: "";
+	 position: absolute;
+	 margin: auto;
+	 top: 22px;
+	 right: 0;
+	 bottom: 0;
+	 left: 22px;
+	 width: 12px;
+	 height: 2px;
+	 background: white;
+	 transform: rotate(45deg);
+	 transition: all 0.5s;
+}
+ .search__form .search::after {
+	 content: "";
+	 position: absolute;
+	 margin: auto;
+	 top: -5px;
+	 right: 0;
+	 bottom: 0;
+	 left: -5px;
+	 width: 25px;
+	 height: 25px;
+	 border-radius: 50%;
+	 border: 2px solid white;
+	 transition: all 0.5s;
+}
+ .search__form input {
+	 position: absolute;
+	 margin: auto;
+	 top: 0;
+	 bottom: 0;
+	 left: 60px;
+	 width: 50px;
+	 height: 40px;
+	 outline: none;
+	 border: none;
+	 background: white;
+	 color: #202020;
+	 padding: 0 60px 0 20px;
+	 border-radius: 30px;
+	 transition: all 1s;
+	 opacity: 0;
+	 z-index: 5;
+	 font-weight: bolder;
+	 letter-spacing: 0.1em;
+     font-family: 'Montserrat', sans-serif;
+}
+ .search__form input:hover {
+	 cursor: pointer;
+}
+ .search__form input:focus {
+	 width: 250px;
+	 opacity: 1;
+	 cursor: text;
+}
+ @media (max-width: 480px) {
+	 .search__form input:focus {
+		 width: 180px;
+	}
+}
+ .search__form input:focus ~ .search {
+	 left: 350px;
+	 z-index: 6;
+	 transition: 1s;
+}
+ @media (max-width: 480px) {
+	 .search__form input:focus ~ .search {
+		 left: 200px;
+	}
+}
+ .search__form input:focus ~ .search::before {
+	 top: 0;
+	 left: 0;
+	 width: 25px;
+	 background: #0f0f0f;
+}
+ .search__form input:focus ~ .search::after {
+	 top: 0;
+	 left: 0;
+	 width: 25px;
+	 height: 2px;
+	 border: none;
+	 background: #0f0f0f;
+	 border-radius: 0%;
+	 transform: rotate(-45deg);
+}
+ .search__form input::placeholder {
+	 color: #353535;
+	 opacity: 0.5;
+	 font-weight: bolder;
+}
+ 
