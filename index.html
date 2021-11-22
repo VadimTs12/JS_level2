@@ -24,7 +24,7 @@
             <div class="cart">
                 <button class="btn-cart" type="button" @click="showCart = !showCart">Корзина</button>
                 <div class="cart-block" v-show="showCart">
-                    <p v-if="cartItems.length">Корзина пуста</p>
+                    <p v-if="!cartItems.length">Корзина пуста</p>
                     <div class="cart-item" v-for="item of cartItems" :key="item.id_product">
                         <div class="product-bio">
                             <img :src="item.img" alt="Some img">
