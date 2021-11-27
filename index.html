@@ -1,28 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/normalize.css">
+<link rel="stylesheet" href="css/style.css">
+ <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+     integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP" crossorigin="anonymous">
+ </script>
 <head>
     <meta charset="UTF-8">
     <title>Интернет-магазин</title>
 </head>
+
 <body>
-    <div class="wrapper">
+    <div class="wrapper" id="app">
         <header>
-            <button class="btn-cart" type="button">Корзина</button>
+            <filtered>
+
+            </filtered>
+
+            <div class="cart">
+                <button class="btn-cart" type="button" @click="showCart = !showCart">Корзина</button>
+             <cart :cart-items="cartItems" :visibility="showCart"></cart>
+            </div>
+          
+
+          </cart>
         </header>
+
         <main>
-            <div class="products"></div>
+            <products :products="filtered" @add-product="addProduct"></products>
         </main>
-        
-        <footer>
-            
-        </footer>
+
+        <footer></footer>
     </div>
-    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="js/ProductComponent.js"></script>
+    <script src="js/CartComponent.js"></script>
+    <script src="js/FilterComponent.js"></script>
+    <script src="js/app.js"></script>
 </body>
+
 </html>
