@@ -66,7 +66,7 @@ button:hover {
 	color: #ffffff;
 }
 img {
-	max-width: 400px;
+	max-width: 200px;
 	width: 100%;
 }
 .summ {
@@ -155,8 +155,9 @@ img {
 .right-block{
     text-align: right;
 }
+
 .btn-search {
-    background-color: transparent;
+    background: transparent !important;
     border: none;
     color: #fafafa;
     font-size: 1.2em;
@@ -181,3 +182,5 @@ img {
     border: none;
     border-bottom: 2px solid #fafafa;
 }
+
+ 
